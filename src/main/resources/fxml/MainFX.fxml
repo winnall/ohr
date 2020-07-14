@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2020 Stephen Winnall.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="l-main" stylesheets="@../../../../OpenHAB-Report/target/generated-resources/css/MainFX.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.winnall.openhab.report.fx.MainFXController">
+    <children>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Run">
+                    <content>
+                        <VBox styleClass="l-body">
+                            <children>
+                                <HBox alignment="CENTER" styleClass="lfd">
+                                    <children>
+                                        <HBox styleClass="lfd-label">
+                                            <children>
+                                                <Label text="JSON Database" />
+                                            </children>
+                                        </HBox>
+                                        <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <TextField fx:id="jsonDatabaseFolderName" alignment="BOTTOM_RIGHT" editable="false" onAction="#jsonDatabaseFolderNameAction" onDragDropped="#jsonDatabaseFolderNameDragDropped" onDragOver="#jsonDatabaseFolderNameDragOver" onMouseClicked="#jsonDatabaseFolderNameOnClick" promptText="OpenHAB JSON database to create report from" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" styleClass="lfd">
+                                    <children>
+                                        <HBox styleClass="lfd-label">
+                                            <children>
+                                                <Label text="Output" />
+                                            </children>
+                                        </HBox>
+                                        <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <TextField fx:id="outputFolderName" alignment="CENTER_RIGHT" editable="false" onAction="#outputFolderNameAction" onDragDropped="#outputFolderNameDragDropped" onDragOver="#outputFolderNameDragOver" onMouseClicked="#outputFolderNameOnClick" promptText="folder to create when generating report" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" styleClass="lfd">
+                                    <children>
+                                        <HBox styleClass="lfd-label">
+                                            <children>
+                                                <Label text="Link Prefix" />
+                                            </children>
+                                        </HBox>
+                                        <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <TextField fx:id="linkPrefix" alignment="CENTER_RIGHT" promptText="prefix for links in generated report" HBox.hgrow="ALWAYS" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" styleClass="lfd">
+                                    <children>
+                                        <HBox styleClass="lfd-label">
+                                        </HBox>
+                                        <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS">
+                                            <children>
+                                                <CheckBox fx:id="zippedOutput" mnemonicParsing="false" selected="true" text="Zipped Output" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                                <HBox styleClass="l-footer">
+                                    <children>
+                                        <ButtonBar nodeOrientation="LEFT_TO_RIGHT" styleClass="l-button-bar" HBox.hgrow="ALWAYS">
+                                            <buttons>
+                                                <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
+                                                <Button defaultButton="true" mnemonicParsing="false" onAction="#runButton" text="Run" />
+                                            </buttons>
+                                        </ButtonBar>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Settings">
+                    <VBox>
+                        <children>
+                            <HBox alignment="CENTER" styleClass="lfd">
+                                <children>
+                                    <HBox styleClass="lfd-label" />
+                                    <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS" />
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

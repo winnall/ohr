@@ -1,0 +1,11 @@
+{
+    "graphviz-app" : "/opt/local/bin/dot",
+    "graphviz-engine" : "FDP",
+    "link-prefix" : "openhab:localhost",
+    "template-folder" : "/Users/steve/Developer/NetBeans/OpenHAB-Report/src/main/resources/etc/template.d",
+    "bindings-folder" : "/Users/steve/Sites/DokuWiki/dokuwiki/data/pages/openhab/localhost",
+    "json-db-folder" : "/Users/steve/Work/OpenHAB-Report/var/lib/openhab2/jsondb/",
+    "json-db-files" : {
+        "things" : "org.eclipse.smarthome.core.thing.Thing.json"
+    }
+}

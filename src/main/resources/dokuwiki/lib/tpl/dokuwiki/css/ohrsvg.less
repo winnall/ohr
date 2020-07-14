@@ -1,0 +1,47 @@
+svg {
+
+    g.graph {
+        fill: transparent;
+        stroke: transparent;
+
+        polygon {
+            fill: transparent;
+            stroke: transparent;
+        }
+
+        g.node {
+            * {
+                fill: white;
+                stroke: black;
+            }
+
+            text {
+                font: normal 100%/1.4 Arial, sans-serif;
+                fill: black;
+                stroke: transparent;
+                text-anchor: middle;
+            }
+
+            ellipse {
+                fill-opacity: 0.5;
+            }
+
+            path {
+
+            }
+
+            polygon {
+                fill-opacity: 0.5;
+            }
+
+            // handle hrefs
+            g a text {
+                fill: #080;
+            }
+        }
+    }
+}
+
+.svg-scrollable {
+    overflow: scroll;
+}

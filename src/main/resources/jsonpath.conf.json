@@ -1,0 +1,130 @@
+{
+    "[common]" : {
+        "label" : "$.label",
+        "channels" : "$.channels",
+        "configuration" : "$.configuration.properties",
+        "properties" : "$.properties",
+        "uid" : "$.uid",
+        "thingTypeUID" : "$.thingTypeUID",
+        "location" : "$.location"
+    },
+    "enocean" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "gardena" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "goecharger" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "homematic" : {
+        "bridge" : {
+            "cuxd-port" : "$.configuration.properties.cuxdPort",
+            "socket-max-alive" : "$.configuration.properties.socketMaxAlive",
+            "install-mode-duration" : "$.configuration.properties.installModeDuration",
+            "timeout" : "$.configuration.properties.timeout",
+            "hm-ip-port" : "$.configuration.properties.hmIpPort",
+            "factory-reset-on-deletion" : "$.configuration.properties.factoryResetOnDeletion",
+            "discovery-time-to-live" : "$.configuration.properties.discoveryTimeToLive",
+            "wired-port" : "$.configuration.properties.wiredPort",
+            "gateway-type" : "$.configuration.properties.gatewayType",
+            "group-port" : "$.configuration.properties.groupPort",
+            "gateway-address" : "$.configuration.properties.gatewayAddress",
+            "unpair-on-deletion" : "$.configuration.properties.unpairOnDeletion",
+            "rf-port" : "$.configuration.properties.rfPort"
+        },
+        "thing" : {
+            "bridge-uid" : "$.bridgeUID.segments",
+            "properties" : "$.properties"
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "hue" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "mqtt" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "mqtt1" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "miele" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "ntp" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "sonos" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "systeminfo" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "solaredge" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    },
+    "unifi" : {
+        "bridge" : {
+        },
+        "thing" : {
+        },
+        "model" : {},
+        "binding" : {}
+    }
+}

@@ -1,0 +1,15 @@
+/* lfd = labelled file dialogue */
+
+.lfd {
+    -fx-padding: $container-padding 0 $container-padding 0;
+    -fx-alignment: center-left;
+
+    .lfd-label {
+        -fx-alignment: center-left;
+        -fx-pref-width: 8em;
+    }
+
+    .lfd-text-field {
+        -fx-alignment: center-left;
+    }
+}

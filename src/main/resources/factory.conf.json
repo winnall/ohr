@@ -1,0 +1,9 @@
+{
+    "target-application" : {
+        "dokuwiki" : "net.winnall.openhab.report.target.DokuWikiApplication",
+        "graphviz" : "net.winnall.openhab.report.target.GraphVizApplication"
+    },
+    "template-engine" : {
+        "freemarker" : "net.winnall.openhab.report.target.freemarker.Freemarker"
+    }
+}
