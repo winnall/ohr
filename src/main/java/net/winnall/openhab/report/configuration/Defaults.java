@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,7 @@ public class Defaults {
     public String getConfigurationFolder() {
         try {
             return Host.getInstance()
-                    .getSupportFileReadOnly( "app.conf.json" )
+                    .getSupportFileReadOnly( "default.conf.json" )
                     .toString();
         } catch( IOException ex ) {
             Logger.getLogger( Defaults.class.getName() )

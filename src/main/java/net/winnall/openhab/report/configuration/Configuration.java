@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,8 +52,6 @@ public class Configuration {
 
     public static final String JSONPATH_CONF_JSON = "jsonpath.conf.json";
 
-    private ConfigurationData configurationData;
-
     private ConfigurationData defaultData;
 
     private ConfigurationData factoryData;
@@ -93,7 +91,7 @@ public class Configuration {
     }
 
     public String getDefaultLinkPrefix() {
-        return defaultData.lookup( String.class, "link-prefix" );
+        return getDefaultParameter( String.class, "link-prefix" );
     }
 
     public <T> T getDefaultParameter( Class<T> valueClass, String... keys ) {
@@ -101,6 +99,9 @@ public class Configuration {
     }
 
     public <T> T getFactoryParameter( Class<T> valueClass, String... keys ) {
+        if( factoryData == null ) {
+            factoryData = openConfigurationFile( FACTORY_CONF_JSON );
+        }
         return valueClass.cast( factoryData );
     }
 
@@ -175,25 +176,19 @@ public class Configuration {
         this.zippedOutput = zippedOutput;
     }
 
-    public void openConfigurationFiles() {
-        defaultData = openConfigurationFile( DEFAULT_CONF_JSON );
-        factoryData = openConfigurationFile( FACTORY_CONF_JSON );
-        jsonpathData = openConfigurationFile( JSONPATH_CONF_JSON );
-    }
-
-    private <T> T getConfigurationData( Class<T> valueClass, Map<String, Object> section, String... keys ) {
-        assert keys.length > 0 : "not enough keys for JSON lookup";
-        return configurationData
-                .lookup( valueClass, keys );
-    }
-
     private <T> T getDefaultData( Class<T> valueClass, String... keys ) {
+        if( defaultData == null ) {
+            defaultData = openConfigurationFile( DEFAULT_CONF_JSON );
+        }
         assert keys.length > 0 : "not enough keys for JSON lookup";
         return defaultData
                 .lookup( valueClass, keys );
     }
 
     private <T> T getJsonpathData( Class<T> valueClass, String... keys ) {
+        if( jsonpathData == null ) {
+            jsonpathData = openConfigurationFile( JSONPATH_CONF_JSON );
+        }
         assert keys.length > 0 : "not enough keys for JSON lookup";
         return jsonpathData
                 .lookup( valueClass, keys );

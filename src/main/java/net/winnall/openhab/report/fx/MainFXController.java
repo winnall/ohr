@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,6 +36,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.winnall.openhab.report.cli.ThingCLI;
 import net.winnall.openhab.report.configuration.Configuration;
+import net.winnall.openhab.report.configuration.Defaults;
+import net.winnall.openhab.report.host.Host;
 
 /**
  * FXML Controller class
@@ -72,16 +74,20 @@ public class MainFXController extends VBox implements Initializable {
      */
     @Override
     public void initialize( URL url, ResourceBundle rb ) {
+        String home = Host.getInstance()
+                .getUserHome();
         // outputFolderName
         outputFolderNameHandler = new FileNameHandler(
                 outputFolderName,
-                "./" );
+                home );
         outputFolderNameHandler.setFolder( true );
         // jsonDatabaseFolderName
         jsonDatabaseFolderNameHandler = new FileNameHandler(
                 jsonDatabaseFolderName,
-                EMPTY_STRING );
+                home );
         jsonDatabaseFolderNameHandler.setFolder( true );
+//        linkPrefix.setText( Configuration.getInstance()
+//                .getDefaultLinkPrefix() );
     }
 
     void setStage( Stage stage ) {
@@ -147,7 +153,6 @@ public class MainFXController extends VBox implements Initializable {
     private void runButton() {
         // set up all the parameters for the app...
         final Configuration configuration = Configuration.getInstance();
-        configuration.openConfigurationFiles();
         configuration.setOutputFolderName( outputFolderName.getText() );
         configuration.setJsonDBFolderName( jsonDatabaseFolderName.getText() );
         configuration.setLinkPrefix( linkPrefix.getText() );

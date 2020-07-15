@@ -101,11 +101,18 @@ public abstract class Host {
         // check the default locations on the current host
         File supportFile = getHostFileSystemSupportFile( filename );
         if( supportFile == null ) {
-            // if there is no file in the fs, get the copy from the jar
             try {
+                // if there is no file in the fs, get the copy from the jar
+                // the following will only work from the IDE
                 supportFile = new File( getClass()
                         .getResource( "/" + filename )
                         .toURI() );
+            } catch( IllegalArgumentException notIDE ) {
+                // not in IDE, so work around
+                // (this doesn't work in the IDE!)
+                supportFile = new File( getClass()
+                        .getResource( "/" + filename )
+                        .toExternalForm() );
             } catch( URISyntaxException ex ) {
                 Logger.getLogger( Host.class.getName() )
                         .log( Level.SEVERE, null, ex );
@@ -119,6 +126,18 @@ public abstract class Host {
         // worst case...
         throw new IOException( String
                 .format( "Cannot find support file anywhere: %s", filename ) );
+    }
+
+    /**
+     * This method should return the name of the user's home folder on the given
+     * platform. In many cases, <code>System.getProperty("user.home")</code> is
+     * adequate, but apparently it does not always work satisfactorily for
+     * Windows, so should be overridden.
+     *
+     * @return the user's home folder
+     */
+    public String getUserHome() {
+        return System.getProperty( "user.home" );
     }
 
     /**

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +78,6 @@ public class MainCLI {
         // NB configurationFile must be opened before Configuration.getInstance
         // methods are called.
         final Configuration configuration = Configuration.getInstance();
-        configuration.openConfigurationFiles();
         configuration.setOutputFolderName( outputFolder );
         configuration.setJsonDBFolderName( jsonDBFile );
         configuration.setLinkPrefix( linkPrefix );
