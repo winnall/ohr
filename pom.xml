@@ -245,8 +245,8 @@ limitations under the License.
                 <configuration>
                     <plist>
                         <JVMMainClassName>${openhab.report.main}</JVMMainClassName>
-                        <CFBundleDisplayName>${name}</CFBundleDisplayName>
-                        <CFBundleIconFile>src/main/resources/etc/icon.icns</CFBundleIconFile>
+                        <CFBundleDisplayName>${project.name}</CFBundleDisplayName>
+                        <CFBundleIconFile>src/main/resources/etc/icon/icon.icns</CFBundleIconFile>
                     </plist>
                 </configuration>
                 <executions>
