@@ -93,6 +93,26 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>de.perdian.maven.plugins</groupId>
+        <artifactId>macosappbundler-maven-plugin</artifactId>
+        <version>1.9.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>bundle</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <plist>
+            <JVMMainClassName>${openhab.report.main}</JVMMainClassName>
+            <CFBundleDisplayName>${name}</CFBundleDisplayName>
+            <CFBundleIconFile>src/main/resources/etc/icon.icns</CFBundleIconFile>
+          </plist>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   <repositories>

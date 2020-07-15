@@ -22,6 +22,8 @@ limitations under the License.
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <name>OpenHAB Reporter</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>14</maven.compiler.source>
@@ -209,38 +211,11 @@ limitations under the License.
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
-
-            <!--            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
-
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>${openhab.report.main}</mainClass>
-                        </manifest>
-                    </archive>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-            </plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -263,21 +238,16 @@ limitations under the License.
                 </executions>
             </plugin>
 
-            <!--            <plugin>
+            <plugin>
                 <groupId>de.perdian.maven.plugins</groupId>
                 <artifactId>macosappbundler-maven-plugin</artifactId>
-                <version>1.8.0</version>
+                <version>1.9.0</version>
                 <configuration>
                     <plist>
-                                                <CFBundleIconFile>icons.icns</CFBundleIconFile>
-                        <CFBundleDisplayName>OpenHAB Reporter</CFBundleDisplayName>
-                        <CFBundleName>OpenHAB Reporter</CFBundleName>
                         <JVMMainClassName>${openhab.report.main}</JVMMainClassName>
+                        <CFBundleDisplayName>${name}</CFBundleDisplayName>
+                        <CFBundleIconFile>src/main/resources/etc/icon.icns</CFBundleIconFile>
                     </plist>
-                    <dmg>
-                        <generate>false</generate>
-                        <autoFallback>true</autoFallback>
-                    </dmg>
                 </configuration>
                 <executions>
                     <execution>
@@ -287,8 +257,7 @@ limitations under the License.
                         </goals>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
-    <name>OpenHAB Reporter</name>
 </project>
