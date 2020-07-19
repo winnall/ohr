@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 Copyright 2020 Stephen Winnall.
 
@@ -25,7 +26,7 @@ limitations under the License.
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="l-main" stylesheets="@../../../../OpenHAB-Report/target/generated-resources/css/MainFX.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.winnall.openhab.report.fx.MainFXController">
+<VBox styleClass="l-main" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.winnall.ohr.fx.MainFXController">
     <children>
         <TabPane tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -81,7 +82,7 @@ limitations under the License.
                                         </HBox>
                                         <HBox styleClass="lfd-text-field" HBox.hgrow="ALWAYS">
                                             <children>
-                                                <CheckBox fx:id="zippedOutput" mnemonicParsing="false" selected="true" text="Zipped Output" />
+                                                <CheckBox fx:id="zippedOutput" mnemonicParsing="false" text="Zipped Output" />
                                             </children>
                                         </HBox>
                                     </children>

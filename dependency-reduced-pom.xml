@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>net.winnall.openhab.report</groupId>
+  <groupId>net.winnall.ohr</groupId>
   <artifactId>ohr</artifactId>
   <name>OpenHAB Reporter</name>
   <version>1.0.0-SNAPSHOT</version>
@@ -15,7 +15,7 @@
           <execution>
             <id>default-cli</id>
             <configuration>
-              <mainClass>${openhab.report.main}</mainClass>
+              <mainClass>${ohr.main}</mainClass>
             </configuration>
           </execution>
           <execution>
@@ -24,7 +24,7 @@
               <options>
                 <option>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address}</option>
               </options>
-              <mainClass>${openhab.report.main}</mainClass>
+              <mainClass>${ohr.main}</mainClass>
             </configuration>
           </execution>
         </executions>
@@ -86,7 +86,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>${openhab.report.main}</mainClass>
+                  <mainClass>${ohr.main}</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -107,9 +107,10 @@
         </executions>
         <configuration>
           <plist>
-            <JVMMainClassName>${openhab.report.main}</JVMMainClassName>
+            <JVMMainClassName>${ohr.main}</JVMMainClassName>
             <CFBundleDisplayName>${project.name}</CFBundleDisplayName>
             <CFBundleIconFile>src/main/resources/etc/icon/icon.icns</CFBundleIconFile>
+            <CFBundleIdentifier>net.winnall.ohr</CFBundleIdentifier>
           </plist>
         </configuration>
       </plugin>
@@ -180,10 +181,10 @@
     </plugins>
   </reporting>
   <properties>
+    <ohr.main>net.winnall.ohr.fx.MainUI</ohr.main>
     <maven.compiler.target>14</maven.compiler.target>
     <maven.compiler.source>14</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <openhab.report.main>net.winnall.openhab.report.fx.MainUI</openhab.report.main>
     <netbeans.hint.license>apache20</netbeans.hint.license>
   </properties>
 </project>

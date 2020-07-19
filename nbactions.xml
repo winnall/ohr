@@ -27,7 +27,7 @@ limitations under the License.
         <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
     </goals>
     <properties>
-        <exec.args>-ea -classpath %classpath net.winnall.openhab.report.fx.MainFX</exec.args>
+        <exec.args>-ea -classpath %classpath net.winnall.ohr.fx.MainFX</exec.args>
         <exec.executable>java</exec.executable>
     </properties>
 </action>
@@ -41,7 +41,7 @@ limitations under the License.
         <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
     </goals>
     <properties>
-        <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -ea -classpath %classpath net.winnall.openhab.report.fx.MainFX</exec.args>
+        <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -ea -classpath %classpath net.winnall.ohr.fx.MainFX</exec.args>
         <exec.executable>java</exec.executable>
         <jpda.listen>true</jpda.listen>
     </properties>
@@ -81,7 +81,7 @@ limitations under the License.
             <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
         </goals>
         <properties>
-            <exec.args>-ea -classpath %classpath net.winnall.openhab.report.fx.MainFX</exec.args>
+            <exec.args>-ea -classpath %classpath net.winnall.ohr.fx.MainFX</exec.args>
             <exec.executable>java</exec.executable>
         </properties>
     </action>
