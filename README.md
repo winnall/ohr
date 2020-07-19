@@ -12,6 +12,18 @@ OHR reads OpenHAB's JSON Database and – currently – produces a report on the
 OHR stores all this information in a file tree that fits perfectly into a [Dokuwiki](https://dokuwiki.org) installation. The generated text and diagrams contain hyperlinks that also work nicely with Dokuwiki.
 
 ## Usage
+![OHR Main Windows](https://github.com/winnall/ohr/blob/master/Documentation/Images/Main%20Window.png)
+
+## Sample Report Pages
+
+### Report Home Page
+![Report Home Page](https://github.com/winnall/ohr/blob/master/Documentation/Images/Report%20Home%20Page.png)
+
+### Binding Report
+![Binding Report](https://github.com/winnall/ohr/blob/master/Documentation/Images/Binding%20Report.png)
+
+### Thing Report
+![Thing Report](https://github.com/winnall/ohr/blob/master/Documentation/Images/Thing%20Report.png)
 
 
 ## Supported Platforms
