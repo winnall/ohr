@@ -76,6 +76,18 @@ OHR is designed to work on MacOS, Linux, Unix, Windows and iOS. However, each of
 
 The only currently implemented platform is MacOS. Volunteers with a love for the other platforms will be supported as far as possible. More details can be found in the wiki at ...
 
+## Installing and Running
+OHR was implemented using Apache Netbeans 12.0 and Maven. Details of the varikous software versions used can be viewed in the file `pom.xml`. I'm aware that this is not very user-friendly, but it is currently the only way I know of pointing you in the right direction even after something changes...
+
+To build your own version, clone the repository to somewhere in your file system, go there and execute the following command:
+```
+mvn clean install
+```
+
+This will create a MacOS application in `target/OpenHAB Reporter.app` and a JAR file in `target/ohr-1.0.0-SNAPSHOT.jar`. The JAR file can be run in situ using the rudimentary shell script `oh-report.sh`, which lives in the root folder of the OHR installation.
+
+At an early stage of OHR development, OHR cold be run from the command line. The code to do that is still in there, but I must confess that I have not tried it recently.
+
 ## Further Information
 Please see the [OHR wiki on Github](https://github.com/winnall/ohr/wiki) for further information, background and plans for further development.
 
