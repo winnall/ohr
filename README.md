@@ -43,12 +43,20 @@ OHR creates Dokuwiki text files, some of which also contain SVG data, in a hiera
 The "auto" files (those whose names start with "auto", i.e. `auto-svg.txt`, `auto.txt`) are (re)generated each time OHR is run, so previous versions are overwritten. OHR only creates "start" files (`start.txt`) if there is not already one there, so users can modify start files to their heart's content, knowing that the content will not be overwritten (unless something goes dreadfully wrong, of course, but you've made a backup anyway, haven't you?). Users are also free to add any further files to the file tree that are needed in their environment. Thus the documentation of the smart home system can be documented in the normal wiki fashion but with a snapshot of the actual OpenHAB system included and linkable.
 
 ## Usage
+When OHR is started, the following window is displayed:
 ![OHR Main Windows](https://github.com/winnall/ohr/blob/master/Documentation/Images/Main%20Window.png)
+The "Run" tab is the only one that currently shows any content. The other form elements are used as follows:
+
+JSON Database | folder name |
+Output | folder name |
+Link Prefix | Dokuwiki path |
+Zipped Output | check field |
+Cancel button | |
+Run button | |
 
 ## Sample Report Pages
 
 ### Report Home Page
-When OHR is started, the following window is displayed.
 ![Report Home Page](https://github.com/winnall/ohr/blob/master/Documentation/Images/Report%20Home%20Page.png)
 
 ### Binding Report
