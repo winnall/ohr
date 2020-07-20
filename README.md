@@ -86,7 +86,7 @@ mvn clean install
 
 This will create a MacOS application in `target/OpenHAB Reporter.app` and a JAR file in `target/ohr-1.0.0-SNAPSHOT.jar`. The JAR file can be run in situ using the rudimentary shell script `oh-report.sh`, which lives in the root folder of the OHR installation.
 
-At an early stage of OHR development, OHR cold be run from the command line. The code to do that is still in there, but I must confess that I have not tried it recently.
+At an early stage of OHR development, OHR could be run from the command line. The code to do that is still in there, but I must confess that I have not tried it recently.
 
 ## Further Information
 Please see the [OHR wiki on Github](https://github.com/winnall/ohr/wiki) for further information, background and plans for further development.
