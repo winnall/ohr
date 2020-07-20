@@ -47,6 +47,11 @@ When OHR is started, the following window is displayed:
 ![OHR Main Windows](https://github.com/winnall/ohr/blob/master/Documentation/Images/Main%20Window.png)
 The "Run" tab is the only one that currently shows any content. The other form elements are used as follows:
 
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
 --|--|--|--
 JSON Database | folder name |
 Output | folder name |
