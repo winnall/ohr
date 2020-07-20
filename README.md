@@ -47,6 +47,7 @@ When OHR is started, the following window is displayed:
 ![OHR Main Windows](https://github.com/winnall/ohr/blob/master/Documentation/Images/Main%20Window.png)
 The "Run" tab is the only one that currently shows any content. The other form elements are used as follows:
 
+--|--|--|--
 JSON Database | folder name |
 Output | folder name |
 Link Prefix | Dokuwiki path |
