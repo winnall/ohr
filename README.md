@@ -54,7 +54,7 @@ Label | Content | What | Usage
 JSON Database | folder name | folder containing JSONDB | drag folder, click on field for a folder chooser, or type a folder name
 Output | folder name | folder to create output in | drag folder, click on field for a folder chooser, or type a folder name
 Link Prefix | Dokuwiki path | path in Dokuwiki format under Dokuwiki home where file tree will be installed | `openhab:localhost`, `my:smart:home:report`
-Zipped Output | check field | whether to create a ZIP file instead of a file tree | _currently unused_
+Zipped Output | check box | whether to create a ZIP file instead of a file tree | _currently unused_
 Cancel button | | | terminate the application without running
 Run button | |  | run the application and terminate
 
