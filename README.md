@@ -47,14 +47,14 @@ When OHR is started, the following window is displayed:
 ![OHR Main Windows](https://github.com/winnall/ohr/blob/master/Documentation/Images/Main%20Window.png)
 The "Run" tab is the only one that currently shows any content. The other form elements are used as follows:
 
-Label | Content | Usage | xxxx
------ | ------- | ----- | ------
-JSON Database | folder name |
-Output | folder name |
-Link Prefix | Dokuwiki path |
-Zipped Output | check field |
-Cancel button | |
-Run button | |
+Label | Content | What | Usage
+----- | ------- | ---- | ------
+JSON Database | folder name | folder containing JSONDB |
+Output | folder name | folder to create output in | drag folder or click on field for a folder chooser
+Link Prefix | Dokuwiki path | path under Dokuwiki home where file tree will be installed | drag folder or click on field for a folder chooser
+Zipped Output | check field | whether to create a ZIP file instead of a file tree |
+Cancel button | | | terminate the application without running
+Run button | |  | run the application and terminate
 
 ## Sample Report Pages
 
