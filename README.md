@@ -36,7 +36,7 @@ OHR creates Dokuwiki text files, some of which also contain SVG data, in a hiera
         <bridge name>/
           start.txt
           auto.txt
-    <binding name 1>/
+    <binding name 2>/
     ...
     <binding name N>/
 ```
