@@ -1,5 +1,3 @@
-THIS FILE IS WORK IN PROGRESS. I WILL ANSWER QUESTIONS AND FIELD PROBLEMS AFTER THIS NOTICE HAS DISAPPEARED. An announcement will be made on https://community.openhab.org in due course.
-
 # OHR
 OpenHAB Reporter
 
