@@ -83,7 +83,7 @@ Home Page
 `openhab:s-oh-00`, `openhab:b-mq-00` and `openhab:b-mq-02` are three _link prefixes_ (see above) or Dokuwiki paths, each of which contains an OHR-generated subtree for each of three OpenHAB installations.
 
 ### Binding Report
-![Binding Report](https://github.com/winnall/ohr/blob/master/Documentation/Images/Binding%20Report.png)
+![Binding Report](./Documentation/Images/Binding%20Report.png)
 
 ### Thing Report
 ![Thing Report](https://github.com/winnall/ohr/blob/master/Documentation/Images/Thing%20Report.png)
