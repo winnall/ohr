@@ -95,7 +95,7 @@ OHR is designed to work on MacOS, Linux, Unix, Windows and iOS. However, each of
 The only currently implemented platform is MacOS. Volunteers with a love for the other platforms will be supported as far as possible. More details can be found in the [wiki](https://github.com/winnall/ohr/wiki/Implementing-Additional-Platform-Support).
 
 ## Installing and Running
-OHR was implemented using Apache Netbeans 12.0 and Maven. Details of the varikous software versions used can be viewed in the file `pom.xml`. I'm aware that this is not very user-friendly, but it is currently the only way I know of pointing you in the right direction even after something changes...
+OHR was implemented using Apache Netbeans 12.0 and Maven. Details of the various software versions used can be viewed in the file `pom.xml`. I'm aware that this is not very user-friendly, but it is currently the only way I know of pointing you in the right direction even after something changes...
 
 To build your own version, clone the repository to somewhere in your file system, go there and execute the following command:
 ```
