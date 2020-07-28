@@ -108,5 +108,3 @@ At an early stage of OHR development, OHR could be run from the command line. Th
 
 ## Further Information
 Please see the [OHR wiki on Github](https://github.com/winnall/ohr/wiki) for further information, background and plans for further development.
-
-## Trivia
