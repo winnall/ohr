@@ -137,8 +137,39 @@ limitations under the License.
         </plugins>
     </reporting>
 
+    <scm>
+        <connection>scm:git:http://127.0.0.1/dummy</connection>
+        <developerConnection>scm:git:https://127.0.0.1/dummy</developerConnection>
+        <tag>HEAD</tag>
+        <url>http://127.0.0.1/dummy</url>
+    </scm>
+
     <build>
+        <finalName>${project.artifactId}-${project.version}-${buildNumber}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>b{0,number}</format>
+                    <items>
+                        <item>buildNumber</item>
+                    </items>
+                    <revisionOnScmFailure>unknown</revisionOnScmFailure>
+                    <doCheck>true</doCheck>
+                    <doUpdate>true</doUpdate>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -226,6 +257,10 @@ limitations under the License.
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>${ohr.main}</mainClass>
+                                    <manifestEntries>
+                                        <Project-Version>${project.version}</Project-Version>
+                                        <Build-Number>${buildNumber}</Build-Number>
+                                    </manifestEntries>
                                 </transformer>
                             </transformers>
                         </configuration>
