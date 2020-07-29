@@ -211,12 +211,10 @@ public class DokuWikiApplication implements TargetApplication {
         if( fileExists ) {
             Logger.getLogger(
                     getClass()
-                            .getName()
-            )
-                    .log(
-                            Level.INFO, String
-                                    .format( "not overwriting %s in %s", filename, folderPath )
-                    );
+                            .getName() )
+                    .log( Level.INFO,
+                          String
+                                  .format( "not overwriting %s in %s", filename, folderPath ) );
             return true;
         }
         return false;
