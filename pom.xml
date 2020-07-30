@@ -29,7 +29,7 @@ limitations under the License.
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
         <netbeans.hint.license>apache20</netbeans.hint.license>
-        <ohr.main>net.winnall.ohr.fx.MainUI</ohr.main>
+        <ohr.main>net.winnall.ohr.cli.MainCLI</ohr.main>
     </properties>
 
     <repositories>
@@ -145,7 +145,6 @@ limitations under the License.
     </scm>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}-${buildNumber}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -168,6 +167,32 @@ limitations under the License.
                     <doCheck>true</doCheck>
                     <doUpdate>true</doUpdate>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.rvesse</groupId>
+                <artifactId>airline-maven-plugin</artifactId>
+                <version>2.8.0</version>
+                <configuration>
+                    <sources>
+                        <source>
+                            <classes>
+                                <class>net.winnall.ohr.cli.MainCLI</class>
+                                <class>net.winnall.ohr.cli.ThingCLI</class>
+                                <class>net.winnall.ohr.fx.MainUI</class>
+                                <class>com.github.rvesse.airline.help.Help</class>
+                            </classes>
+                        </source>
+                    </sources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>

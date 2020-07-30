@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,8 +15,11 @@
  */
 package net.winnall.ohr.cli;
 
+import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
+import com.github.rvesse.airline.annotations.Option;
 import net.winnall.ohr.ThingCommand;
+import net.winnall.ohr.configuration.Configuration;
 
 /**
  *
@@ -24,9 +27,36 @@ import net.winnall.ohr.ThingCommand;
  */
 @Command(
          name = "things",
-         description = "Create Thing report"
+         description = "create Thing report"
 )
 public class ThingCLI extends ThingCommand {
+
+    @Option(
+             title = "link prefix",
+             name = { "-p", "--prefix", "--link-prefix" },
+             description = "prefix for links in generated documents"
+    )
+    private static String linkPrefix = Configuration.getInstance()
+            .getDefaultLinkPrefix();
+
+    @Option(
+             title = "output folder",
+             name = { "-o", "--output" },
+             description = "report output folder"
+    )
+    private static String outputFolder = null;
+
+    @Option(
+             name = { "-z", "--zip", "--zipped-output" },
+             description = "make a .zip of the output folder"
+    )
+    private static boolean zippedOutput = false;
+
+    @Arguments(
+             title = "JSON DB folder",
+             description = "folder containing the OpenHAB JSON DB Things or Items"
+    )
+    private static String jsonDBFile = null;
 
     /**
      *
@@ -36,6 +66,15 @@ public class ThingCLI extends ThingCommand {
 
     @Override
     public void run() {
+        // set up default options
+        // NB configurationFile must be opened before Configuration.getInstance
+        // methods are called.
+        final Configuration configuration = Configuration.getInstance();
+        configuration.setOutputFolderName( outputFolder );
+        configuration.setJsonDBFolderName( jsonDBFile );
+        configuration.setLinkPrefix( linkPrefix );
+        configuration.setZippedOutput( zippedOutput );
+
         super.run();
     }
 

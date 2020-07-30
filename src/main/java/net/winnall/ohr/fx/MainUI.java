@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright 2020 Stephen Winnall.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,24 @@
  */
 package net.winnall.ohr.fx;
 
+import com.github.rvesse.airline.annotations.Command;
+
 /**
  *
  * @author Stephen Winnall
  */
-public class MainUI {
+@Command(
+         name = "ui",
+         description = "run OHR with JavaFX UI"
+)
+public class MainUI implements Runnable {
 
     public static void main( String[] args ) {
+    }
+
+    @Override
+    public void run() {
+        String[] args = new String[ 0 ];
         MainFX.main( args );
     }
 

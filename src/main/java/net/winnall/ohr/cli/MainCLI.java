@@ -15,55 +15,28 @@
  */
 package net.winnall.ohr.cli;
 
-import net.winnall.ohr.configuration.Configuration;
 import com.github.rvesse.airline.Cli;
-import com.github.rvesse.airline.annotations.Arguments;
 import com.github.rvesse.airline.annotations.Command;
-import com.github.rvesse.airline.annotations.Option;
 import com.github.rvesse.airline.help.Help;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import net.winnall.ohr.fx.MainUI;
 
 /**
  *
  * @author steve
  */
 @com.github.rvesse.airline.annotations.Cli(
-         name = "openhab-report",
+         name = "ohr",
          description = "OpenHAB Reporter",
-         defaultCommand = ThingCLI.class,
-         commands = { ThingCLI.class, Help.class }
+         defaultCommand = MainUI.class,
+         commands = { ThingCLI.class, MainUI.class, Help.class }
 )
 @Command(
-         name = "openhab-report",
+         name = "ohr",
          description = "create Thing report"
 )
 public class MainCLI {
-
-    @Option(
-             name = { "-p", "--prefix", "--link-prefix" },
-             description = "prefix for links in generated documents"
-    )
-    private static String linkPrefix = Configuration.getInstance()
-            .getDefaultLinkPrefix();
-
-    @Option(
-             name = { "-o", "--output" },
-             description = "report output folder"
-    )
-    private static String outputFolder = null;
-
-    @Option(
-             name = { "-z", "--zip", "--zipped-output" },
-             description = "make a .zip of the output folder"
-    )
-    private static boolean zippedOutput = false;
-
-    @Arguments(
-             title = "json",
-             description = "file containing the OpenHAB JSON DB Things or Items"
-    )
-    private static String jsonDBFile = null;
 
     /**
      *
@@ -74,14 +47,6 @@ public class MainCLI {
                 .log( Level.CONFIG, "starting main()" );
         Cli<Runnable> cli = new Cli<>( MainCLI.class );
         Runnable cmd = cli.parse( arguments );
-        // set up default options
-        // NB configurationFile must be opened before Configuration.getInstance
-        // methods are called.
-        final Configuration configuration = Configuration.getInstance();
-        configuration.setOutputFolderName( outputFolder );
-        configuration.setJsonDBFolderName( jsonDBFile );
-        configuration.setLinkPrefix( linkPrefix );
-        configuration.setZippedOutput( zippedOutput );
         // run the program
         cmd.run();
     }
