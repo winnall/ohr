@@ -41,6 +41,51 @@ OHR creates Dokuwiki text files, some of which also contain SVG data, in a hiera
 The "auto" files (those whose names start with "auto", i.e. `auto-svg.txt`, `auto.txt`) are (re)generated each time OHR is run, so previous versions are overwritten. OHR only creates "start" files (`start.txt`) if there is not already one there, so users can modify start files to their heart's content, knowing that the content will not be overwritten (unless something goes dreadfully wrong, of course, but you've made a backup anyway, haven't you?). Users are also free to add any further files to the file tree that are needed in their environment. Thus the documentation of the smart home system can be documented in the normal wiki fashion but with a snapshot of the actual OpenHAB system included and linkable.
 
 ## Usage
+OHR can now be started from the command line as well as from the packaged application.
+
+### CLI
+To start OHR from the command line, use the file `oh-report.sh` that is in the distribution, or write an improved version yourself. If you issue the command `oh-report.sh help`, you should see the following:
+```
+usage: ohr <command> [ <args> ]
+
+Commands are:
+    help     Display help information
+    things   create Thing report
+    ui       run OHR with JavaFX UI
+
+See 'ohr help <command>' for more information on a specific command.
+```
+To create a report, use the command `oh-report.sh things`, whose help is as follows:
+```
+NAME
+        ohr things - create Thing report
+
+SYNOPSIS
+        ohr things [ {-o | --output} <output folder> ]
+                [ {-p | --prefix | --link-prefix} <link prefix> ]
+                [ {-z | --zip | --zipped-output} ] [--] [ <JSON DB folder> ]
+
+OPTIONS
+        -o <output folder>, --output <output folder>
+            report output folder
+
+        -p <link prefix>, --prefix <link prefix>, --link-prefix <link prefix>
+            prefix for links in generated documents
+
+        -z, --zip, --zipped-output
+            make a .zip of the output folder
+
+        --
+            This option can be used to separate command-line options from the
+            list of arguments (useful when arguments might be mistaken for
+            command-line options)
+
+        <JSON DB folder>
+            folder containing the OpenHAB JSON DB Things or Items
+```
+Either of the commands `oh-startup.sh` or `oh-startup.ch ui`, as well as running the packaged application, will start the GUI version of OHR, as described below
+
+### GUI
 When OHR is started, the following window is displayed:
 
 ![OHR Main Windows](./Documentation/Images/Main%20Window.png)
