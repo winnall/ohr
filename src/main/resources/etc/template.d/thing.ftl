@@ -12,7 +12,7 @@
 
 
 | Label         | ${label} |
-| Channels      | ${channels?size} |
+| Channels      | <@macros.list_channels channels=channels /> |
 | Configuration | <#assign keys = configuration?keys?sort><#list keys as key>${key} : ${configuration[key]}\\ </#list> |
 | Properties    | <#assign keys = properties?keys?sort><#list keys as key>${key} : ${properties[key]}\\ </#list> |
 | UID           | <#list uid.segments as segment>${segment}<#sep> - </#sep></#list> |

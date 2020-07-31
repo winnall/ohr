@@ -34,7 +34,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import net.winnall.ohr.cli.ThingCLI;
+import net.winnall.ohr.ThingCommand;
 import net.winnall.ohr.configuration.Configuration;
 import net.winnall.ohr.host.Host;
 
@@ -158,7 +158,7 @@ public class MainFXController extends VBox implements Initializable {
         configuration.setLinkPrefix( linkPrefix.getText() );
         configuration.setZippedOutput( zippedOutput.isSelected() );
         // ...and then run it
-        new ThingCLI().run();
+        new ThingCommand().run();
         // exit when done
         System.exit( 0 );
     }
