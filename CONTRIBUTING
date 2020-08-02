@@ -6,7 +6,7 @@ The major requirement from my (Stephen Winnall's) point of view is for some one 
 I believe that an application should look like it belongs on host that it is running on and not like a generic Java application of no fixed abode.
 This means that all the conventions of the host systems should be lovingly abided by, which implies that someone with sufficient knowledge of and a love for
 the respective host system should do it. That ain't me in the case of Linux and Windows. My knowledge of Linux is restricted to server applications and command
-line; and I haven't used Windows in earnest since 2004, and I don't love it.
+line; and I haven't used Windows in earnest since 2004, and I don't love it, though I respect those who do.
 
 In general, this means the following should be lovingly crafted:
 
