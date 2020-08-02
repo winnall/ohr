@@ -83,7 +83,7 @@ OPTIONS
         <JSON DB folder>
             folder containing the OpenHAB JSON DB Things or Items
 ```
-Either of the commands `oh-startup.sh` or `oh-startup.ch ui`, as well as running the packaged application, will start the GUI version of OHR, as described below.
+Either of the commands `oh-report.sh` or `oh-report.ch ui`, as well as running the packaged application, will start the GUI version of OHR, as described below.
 
 ### GUI
 When OHR is started, the following window is displayed:
