@@ -1,0 +1,21 @@
+The major requirement from my (Stephen Winnall's) point of view is for some one to help with:
+
+  1. Linux customisation
+  2. Windows customisation
+  
+I believe that an application should look like it belongs on host that it is running on and not like a generic Java application of no fixed abode.
+This means that all the conventions of the host systems should be lovingly abided by, which implies that someone with sufficient knowledge of and a love for
+the respective host system should do it. That ain't me in the case of Linux and Windows. My knowledge of Linux is restricted to server applications and command
+line; and I haven't used Windows in earnest since 2004, and I don't love it.
+
+In general, this means the following should be lovingly crafted:
+
+  1. look - provision of known visual patterns from the host system (window layouts, settings, help, choosers, menu position, button order, etc.)
+  2. feel - provision of known usage patterns from the host system (short cuts, location of files, order and naming of menu items, etc.)
+  3. installation - provision of appropriately packaged executable files for the host system
+
+In OHR, this is relatively simple because it does not currently have menues or shortcuts, and JavaFX provides some help with the rest. However, there are two
+classes (`LinuxHost` and `WindowsHost`) which automatically instantiate the abstract class `Host` to ensure – mainly – appropriate locations for the files
+that configure OHR. This may change as OHR gets enhanced.
+
+If you can help with this, respond to the issues that I have opened.
