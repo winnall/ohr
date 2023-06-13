@@ -2,7 +2,7 @@
 OpenHAB Reporter
 
 ## Current Status
-Beta.
+Discontinued. At some time in the future I might re-write it as an OpenHAB extension.
 
 ## What Is It?
 OHR is a TLA and stands for "OpenHAB Reporter". [OpenHAB](https://openhab.org) is "a vendor and technology agnostic open source automation software for your home". OHR is an aid to documenting an OpenHAB installation or writing a user manual for a smart home. OHR was born of my realisation that I should provide adequate documentation for my own smart home for the future when someone else takes it over.
